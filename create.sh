@@ -1,4 +1,6 @@
 #!/bin/bash
+set -exuo pipefail
+
 if ! [[ -d ./_chroot ]]; then
 	echo '"_chroot" does not exist :('
 	exit 1
