@@ -2,7 +2,7 @@
 unset LD_PRELOAD
 proot \
   --link2symlink \
-  -w /root \
+  -w /home/user \
   -r ./_chroot \
   -b /sys/ \
   -b /system \
