@@ -37,7 +37,6 @@ staff:x:50:
 games:x:60:
 users:x:100:
 nogroup:x:65534:
-
 systemd-journal:x:101:
 systemd-timesync:x:102:
 systemd-network:x:103:
@@ -46,4 +45,3 @@ netdev:x:109:pi
 messagebus:x:110:
 avahi:x:113:
 systemd-coredump:x:996:
-user:x:10264:

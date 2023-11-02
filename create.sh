@@ -10,7 +10,6 @@ pkg install -y root-repo
 pkg install -y proot
 pkg install -y debootstrap
 pkg install -y vim
-pkg install -y nano
 pkg install -y wget
 pkg install -y man
 
@@ -20,5 +19,8 @@ mkdir ./_chroot/system
 mkdir ./_chroot/apex
 mkdir ./_chroot/home/user
 
-[[ -f ./passwd ]] && cp -v ./passwd ./_chroot/etc/passwd
-[[ -f ./group ]] && cp -v ./group ./_chroot/etc/group
+_uid=$(id -u)
+_gid=$(id -g)
+
+[[ -f ./passwd ]] && cp -v ./passwd ./_chroot/etc/passwd && echo "user:x:$_uid:$_gid:User:/home/user:/bin/bash" >> ./_chroot/etc/passwd
+[[ -f ./group ]] && cp -v ./group ./_chroot/etc/group && echo "user:x:$_gid:" >> ./_chroot/etc/group
